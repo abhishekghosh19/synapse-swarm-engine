@@ -27,7 +27,7 @@ def run_agent(persona_name, persona_prompt, task):
         client = genai.Client(api_key=api_key)
         full_prompt = f"{persona_prompt}\n\nTask: {task}"
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-3.6-flash",
             contents=full_prompt,
         )
         return persona_name, response.text
